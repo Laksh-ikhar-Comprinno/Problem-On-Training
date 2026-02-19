@@ -1,0 +1,18 @@
+void solve(stack<int>& inputstack, int count ,int size)
+{
+    if count== size/2){
+        inputstack.pop();
+        return;
+        
+    }
+    
+    int num= inputstack.top();
+    inputstack.pop();
+    solve (inputStack,count+1,size);
+    inputstack.push(num);
+}
+void deleteMiddle(stack<int>&inputstack,int N)
+
+int count=0;
+solve (inputStack,count,N);
+}
