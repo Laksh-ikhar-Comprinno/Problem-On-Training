@@ -1,0 +1,53 @@
+class MyCircularQueue {
+public:
+    vector<int> q;
+    int start;
+    int end;
+    int length;
+    int cap;
+
+    MyCircularQueue(int k) {
+        q = vector<int> (k, 0);
+        start = 0;
+        end = 0;
+        length = 0;
+        cap = k;
+    }
+    
+    bool enQueue(int value) {
+        if (length == cap) return false;
+
+        q[end] = value;
+        end = (end + 1) % cap;
+        length ++;
+        return true;
+    }
+    
+    bool deQueue() {
+        if (length == 0) return false;
+
+        start = (start + 1) % cap;
+        length --;
+        return true;
+    }
+    
+    int Front() {
+        if (length == 0) return -1;
+
+        return q[start];
+    }
+    
+    int Rear() {
+        if (length == 0) return -1;
+
+        return q[(end-1+cap)%cap];
+    }
+    
+    bool isEmpty() {
+        return (length == 0);
+    }
+    
+    bool isFull() {
+        return (length == cap);
+    }
+};
