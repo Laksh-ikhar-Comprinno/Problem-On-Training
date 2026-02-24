@@ -1,0 +1,35 @@
+
+#include <iostream>
+#include<map>
+#include<unordered_map>
+using namespace std;
+int main() {
+    unordered_map<string,int> m;
+    
+    pair<string,int> pair1("laksh",1);
+    m.insert(pair1);
+    pair<string,int> pair2("ikhar",2);
+    m.insert(pair2);
+    m["shree"]=4;
+    m["shri"]=2;
+    cout<<m["shree"]<<endl;
+    cout<<m.at("shri")<<endl;
+    cout<<m.size()<<endl;
+    cout<<m.count("laksh")<<endl;
+    cout<<m.count("hai hi nahi")<<endl;
+    m.erase("shri");
+    cout<<m.size()<<endl;
+    for(auto i:m){
+        cout<<i.first<<" "<< i.second <<endl;
+    }
+    unordered_map<string,int>::iterator it=m.begin();
+    
+   //iterator way of giving hash map with it map functiond
+   
+    while(it !=m.end()){
+        cout<<it->first<<" "<< it->second<<endl;
+        it++;
+        
+    }
+    return 0;
+}
