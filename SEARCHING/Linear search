@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int linearSearch(int arr[], int n, int targetVal) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == targetVal) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int main() {
+    int arr[] = {3, 7, 2, 9, 5};
+    int n = 5;
+    int targetVal = 9;
+
+    int result = linearSearch(arr, n, targetVal);
+
+    if (result != -1) {
+        cout << "Value " << targetVal << " found at index " << result;
+    } else {
+        cout << "Value " << targetVal << " not found";
+    }
+
+    return 0;
+}
